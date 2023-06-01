@@ -6,13 +6,64 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "release": "release-it"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@expo/vector-icons": "^13.0.0",
+    "@react-navigation/material-bottom-tabs": "^6.2.15",
+    "@react-navigation/native": "^6.1.6",
+    "@react-navigation/stack": "^6.3.16",
+    "@release-it/conventional-changelog": "^5.1.1",
+    "axios": "^1.4.0",
+    "convert-svg-to-png": "^0.6.4",
+    "deepmerge": "^4.3.1",
     "expo": "~48.0.15",
     "expo-status-bar": "~1.4.4",
+    "husky": "^8.0.3",
+    "millify": "^6.1.0",
+    "moment": "^2.29.4",
     "react": "18.2.0",
-    "react-native": "0.71.8"
+    "react-native": "0.71.8",
+    "react-native-gesture-handler": "~2.9.0",
+    "react-native-paper": "^5.8.0",
+    "react-native-safe-area-context": "4.5.0",
+    "react-native-screens": "~3.20.0",
+    "react-native-svg": "13.4.0",
+    "react-native-vector-icons": "^9.2.0",
+    "release-it": "^15.10.3"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {}
+          ]
+        }
+      }
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
