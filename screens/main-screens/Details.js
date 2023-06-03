@@ -68,7 +68,7 @@ const Details = ({route, navigation}) => {
                     <Foundation name="dollar" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Price To USD</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin?.price)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin?.price)}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -83,7 +83,7 @@ const Details = ({route, navigation}) => {
                     <FontAwesome name="hashtag" size={16} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Rank</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>{data?.data?.coin?.rank}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>{data?.data?.coin?.rank}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -98,7 +98,7 @@ const Details = ({route, navigation}) => {
                     <MaterialIcons name="flash-on" size={20} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >24h Volume</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin['24hVolume'])}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin['24hVolume'])}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -113,7 +113,7 @@ const Details = ({route, navigation}) => {
                     <Foundation name="dollar" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Market Cap</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin?.marketCap)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin?.marketCap)}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -128,7 +128,7 @@ const Details = ({route, navigation}) => {
                     <Ionicons name="trophy" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >All-Time-High</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin?.allTimeHigh?.price)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin?.allTimeHigh?.price)}</Text>
                 </View>
             </View>
 
@@ -162,7 +162,7 @@ const Details = ({route, navigation}) => {
                     <AntDesign name="linechart" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Number Of Markets</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>{millify(data?.data?.coin?.numberOfMarkets)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>{millify(data?.data?.coin?.numberOfMarkets)}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -177,7 +177,7 @@ const Details = ({route, navigation}) => {
                     <FontAwesome name="exchange" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Number Of Exchanges</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>{millify(data?.data?.coin?.numberOfExchanges)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>{millify(data?.data?.coin?.numberOfExchanges)}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -192,7 +192,7 @@ const Details = ({route, navigation}) => {
                     <Ionicons name="warning-outline" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Approved Supply</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>{data?.data?.coin?.supply?.confirmed ? <AntDesign name="check" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} /> : <AntDesign name="close" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>{data?.data?.coin?.supply?.confirmed ? <AntDesign name="check" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} /> : <AntDesign name="close" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -207,7 +207,7 @@ const Details = ({route, navigation}) => {
                     <Ionicons name="warning-outline" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Total Supply</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin?.supply?.total)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin?.supply?.total)}</Text>
                 </View>
                 <View style={{
                     flexDirection: 'row',
@@ -222,7 +222,7 @@ const Details = ({route, navigation}) => {
                     <Ionicons name="warning-outline" size={24} color={theme.colors.onBackground} style={{marginRight: 15}} />
                     <Text style={{color: theme.colors.secondary}} >Circulating Supply</Text>
                     </View>
-                    <Text style={{fontWeight: 700}}>$ {millify(data?.data?.coin?.supply?.circulating)}</Text>
+                    <Text style={{fontWeight: 700, color: theme.colors.onBackground}}>$ {millify(data?.data?.coin?.supply?.circulating)}</Text>
                 </View>
             </View>
 

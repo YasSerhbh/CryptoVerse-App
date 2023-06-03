@@ -48,12 +48,15 @@ const CryptoCurrencies = ({navigation}) => {
             width: '80%',
             marginHorizontal: '10%',
             marginVertical: 20,
-            height: 36,
+            height: 46,
             backgroundColor: theme.colors.background,
             color: theme.colors.onBackground,
-            fontSize: 18
+            fontSize: 18,
+            borderRadius: 20,
+            paddingLeft: 10
             }}
         placeholder="Search"
+        placeholderTextColor={theme.colors.secondary}
         onChangeText={term => handleSearch(term)}
         cursorColor={theme.colors.onBackground}
       />

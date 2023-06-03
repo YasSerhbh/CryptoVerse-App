@@ -11,7 +11,7 @@ const CryptoCard = ({coin, navigation}) => {
     <TouchableWithoutFeedback  onPress={() => navigation.navigate('Details', {id: coin.uuid})} >
     <View
      style={{
-        backgroundColor: theme.colors.onSecondary,
+        backgroundColor: theme.colors.background,
         shadowColor: theme.colors.primary,
         borderRadius: 20,
         marginHorizontal: '5%',

@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import {useEffect, useState} from 'react';
 import Welcome from './screens/Welcome';
 import Main from './screens/Main';
 import Details from './screens/main-screens/Details'
@@ -28,14 +29,16 @@ const Stack = createStackNavigator()
 
 
 export default function App() {
-
     var theme = useTheme()
+
+
+
   return (
     <PaperProvider theme={CombinedDefaultTheme}>
     <NavigationContainer theme={CombinedDefaultTheme}>
         <Stack.Navigator initialRouteName='Welcome' >
             <Stack.Screen name='Welcome' component={Welcome} options={{headerShown: false}} />
-            <Stack.Screen name='Main' component={Main} options={{
+            <Stack.Screen name='Main' component={Main} initialParams={{}} options={{
                 headerShown: true,
                 headerLeft: () => (
                     <Image source={require('./assets/images/32.png')} style={{marginHorizontal: 19}} />

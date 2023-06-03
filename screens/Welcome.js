@@ -12,11 +12,11 @@ const Welcome = ({ navigation }) => {
   const theme = useTheme()
 
   return (
-    <SafeAreaView style={{...styles.container, backgroundColor: theme.colors.primaryContainer}}>
+    <SafeAreaView style={{...styles.container, backgroundColor: '#e9deff'}}>
 
         <StatusBar
         animated={true}
-        backgroundColor={theme.colors.primary}
+        backgroundColor="#6651a4"
         hidden={false}
         barStyle='light-content'
         />
@@ -33,7 +33,7 @@ const Welcome = ({ navigation }) => {
         <Text style={styles.subtitle}>All informations you need about cryptocurrencies in one place</Text>
       </View>
 
-      <TouchableOpacity style={{...styles.button, backgroundColor: theme.colors.primary}} onPress={handleGetStarted}>
+      <TouchableOpacity style={{...styles.button, backgroundColor: '#6651a4'}} onPress={handleGetStarted}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </SafeAreaView>
