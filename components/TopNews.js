@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity,  ActivityIndicator, FlatList } from 'react-native'
+import { View, Text, TouchableOpacity,  ActivityIndicator, FlatList, Linking } from 'react-native'
 import React from 'react'
 import useNewsFetch from '../hooks/useNewsFetch'
 import { useTheme } from 'react-native-paper'
@@ -36,6 +36,16 @@ const TopNews = ({navigation}) => {
             fontSize: 16,
             fontWeight: '500'
         }}>Show More</Text></TouchableOpacity>
+
+
+        <TouchableOpacity onPress={() => Linking.openURL(`https://chikhloupi.lol/`)} style={{
+            marginHorizontal: '10%',
+            marginVertical: 16
+        }}><Text style={{
+            color: theme.colors.primary,
+            fontSize: 16,
+            fontWeight: '500'
+        }}>See more details on ChikhLoupi</Text></TouchableOpacity>
     </View>
   )
 }
