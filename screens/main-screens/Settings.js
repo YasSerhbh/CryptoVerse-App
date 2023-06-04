@@ -2,17 +2,21 @@ import { View, Text, SafeAreaView, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 import { useTheme, Switch } from 'react-native-paper'
 import {Picker} from '@react-native-picker/picker';
+import { switchState } from '../../redux/darkModeSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-const Settings = ({route}) => {
+const Settings = () => {
 
     const [darkModeEnabled, setDarkModeEnabled] = useState(false);
     const [selectedLanguage, setSelectedLanguage] = useState('en');
 
-  
+    const dispatch = useDispatch()
+    const {active} = useSelector(state => state.darkMode)
   
     const handleDarkModeToggle = () => {
         setDarkModeEnabled(!darkModeEnabled);
+        dispatch(switchState(darkModeEnabled))
     };
 
     const handleLanguageChange = (value) => {
@@ -28,10 +32,11 @@ const Settings = ({route}) => {
       <View style={{...styles.option, backgroundColor: theme.colors.background}}>
         <Text style={{...styles.optionText, color: theme.colors.onBackground}}>Dark Mode</Text>
         <Switch
-          value={darkModeEnabled}
+          value={active}
           onValueChange={handleDarkModeToggle}
           thumbColor="#ffffff"
           trackColor={{ false: '#d3d3d3', true: '#81b0ff' }}
+          theme={theme}
         />
       </View>
       <View style={{...styles.option, backgroundColor: theme.colors.background}}>

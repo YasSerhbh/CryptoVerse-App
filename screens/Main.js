@@ -11,7 +11,7 @@ import Settings from './main-screens/Settings'
 const Tab = createMaterialBottomTabNavigator()
 
 
-const Main = ({route}) => {
+const Main = () => {
     const {width} = useWindowDimensions()
     const theme = useTheme()
 
@@ -24,7 +24,7 @@ const Main = ({route}) => {
                 hidden={false}
                 barStyle='light-content'
             />
-        <Tab.Navigator>
+        <Tab.Navigator barStyle={{backgroundColor: theme.colors.inverseOnSurface}} >
             <Tab.Screen name='Home' component={Home} options={{
                     tabBarLabel: false,
                 tabBarIcon: ({focused}) => (
