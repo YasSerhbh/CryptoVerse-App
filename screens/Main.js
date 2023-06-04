@@ -24,7 +24,7 @@ const Main = () => {
                 hidden={false}
                 barStyle='light-content'
             />
-        <Tab.Navigator barStyle={{backgroundColor: theme.colors.inverseOnSurface}} >
+        <Tab.Navigator barStyle={{backgroundColor: theme.colors.inverseOnSurface}} sceneAnimationEnabled>
             <Tab.Screen name='Home' component={Home} options={{
                     tabBarLabel: false,
                 tabBarIcon: ({focused}) => (
