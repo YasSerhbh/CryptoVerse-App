@@ -14,6 +14,15 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "plugins": [
+        [
+           "expo-notifications",
+           {
+               "icon": "./assets/notification-icon.png",
+               "color": "#000000"
+           }
+        ]
+     ],
     "ios": {
       "supportsTablet": true
     },
@@ -22,7 +31,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundImage": "./assets/adaptive-icon.png"
       },
-      "package": "com.chikhloupi.cryptoverse"
+      "package": "com.chikhloupi.cryptoverse",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"

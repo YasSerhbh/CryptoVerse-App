@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { RAPID_API_KEY } from "../KEYS";
 
 
 const useCoinFetch = (endpoint, query) => {
@@ -14,7 +15,7 @@ const useCoinFetch = (endpoint, query) => {
         url: `https://coinranking1.p.rapidapi.com/${endpoint}`,
         params: {...query},
         headers: {
-          'X-RapidAPI-Key': 'dbc9a9236bmsh739de702e5fe09ep1e57eejsn90ea05c93668',
+          'X-RapidAPI-Key': RAPID_API_KEY,
           'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
         }
     };

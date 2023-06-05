@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { RAPID_API_KEY } from "../KEYS"
 
 
 
@@ -15,7 +16,7 @@ const useNewsFetch = (count) => {
 	method: 'GET',
 	headers: {
 		'X-BingApis-SDK': 'true',
-		'X-RapidAPI-Key': 'dbc9a9236bmsh739de702e5fe09ep1e57eejsn90ea05c93668',
+		'X-RapidAPI-Key': RAPID_API_KEY,
 		'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
 	}
 };
