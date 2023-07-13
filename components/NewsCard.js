@@ -2,6 +2,23 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Linking } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import moment from 'moment';
+import { useSelector } from 'react-redux'
+import {I18n} from 'i18n-js'
+
+
+
+var content = {
+    en: {
+        g1: 'Read More'
+    },
+    fr: {
+        g1: 'Voir Plus'
+    }
+}
+
+const i18n = new I18n(content)
+
+i18n.enableFallback = true;
 
 
 const NewsCard = ({item}) => {
@@ -9,6 +26,9 @@ const NewsCard = ({item}) => {
     var demoImg = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News'
     
     const theme = useTheme()
+    const {lang} = useSelector(state => state.language)
+
+    i18n.locale = lang
 
 
   return (
@@ -17,7 +37,7 @@ const NewsCard = ({item}) => {
       <View style={styles.content}>
         <Text style={{...styles.title, color: theme.colors.onBackground}}>{item.name}</Text>
         <Text style={{...styles.description, color: theme.colors.secondary}}>{item.description.substr(0, 150)}...
-            <TouchableOpacity onPress={() => Linking.openURL(item.url)}><Text style={{...styles.description,marginBottom: 0, fontWeight: '500', color: theme.colors.primary}}>Read More</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL(item.url)}><Text style={{...styles.description,marginBottom: 0, fontWeight: '500', color: theme.colors.primary}}>{i18n.t('g1')}</Text></TouchableOpacity>
         </Text>
         <View style={styles.providerContainer}>
           <Image source={{ uri: item?.provider[0]?.image?.thumbnail?.contentUrl || demoImg }} style={styles.providerIcon} />

@@ -7,13 +7,38 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import News from './main-screens/News'
 import { useTheme } from 'react-native-paper'
 import Settings from './main-screens/Settings'
+import { useSelector } from 'react-redux'
+import { I18n } from 'i18n-js'
 
 const Tab = createMaterialBottomTabNavigator()
+
+var content = {
+    en: {
+        g1: 'Home',
+        g2: 'Cryptos',
+        g3: 'News',
+        g4: 'Settings'
+    },
+    fr: {
+        g1: 'Acceuil',
+        g2: 'Cryptos',
+        g3: 'Actualités',
+        g4: 'Paramètres'
+    }
+}
+
+const i18n = new I18n(content)
+
+i18n.enableFallback = true;
 
 
 const Main = () => {
     const {width} = useWindowDimensions()
     const theme = useTheme()
+
+    const {lang} = useSelector(state => state.language)
+
+    i18n.locale = lang
 
     
   return (
@@ -30,7 +55,7 @@ const Main = () => {
                 tabBarIcon: ({focused}) => (
                     <View style={{width: width / 4, height: 76, top: -14, justifyContent: 'center', alignItems: 'center', backgroundColor: focused ? theme.colors.primaryContainer : theme.colors.inverseOnSurface, borderRadius: 26}}>
                         <MaterialCommunityIcons name="home" color={focused ? theme.colors.primary : theme.colors.onBackground} size={27} />
-                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>Home</Text>
+                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>{i18n.t("g1")}</Text>
                     </View>
                 )
                 }} />
@@ -39,7 +64,7 @@ const Main = () => {
                 tabBarIcon: ({focused}) => (
                     <View style={{width: width / 4, height: 76, top: -14, justifyContent: 'center', alignItems: 'center', backgroundColor: focused ? theme.colors.primaryContainer : theme.colors.inverseOnSurface, borderRadius: 26}}>
                         <MaterialCommunityIcons name="bitcoin" color={focused ? theme.colors.primary : theme.colors.onBackground} size={27} />
-                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>Cryptos</Text>
+                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>{i18n.t("g2")}</Text>
                     </View>
                 )
                 }} />
@@ -48,7 +73,7 @@ const Main = () => {
                 tabBarIcon: ({focused}) => (
                     <View style={{width: width / 4, height: 76, top: -14, justifyContent: 'center', alignItems: 'center', backgroundColor: focused ? theme.colors.primaryContainer : theme.colors.inverseOnSurface, borderRadius: 26}}>
                         <MaterialCommunityIcons name="newspaper-variant-multiple" color={focused ? theme.colors.primary : theme.colors.onBackground} size={27} />
-                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>News</Text>
+                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>{i18n.t("g3")}</Text>
                     </View>
                 )
             }} />
@@ -57,7 +82,7 @@ const Main = () => {
                 tabBarIcon: ({focused}) => (
                     <View style={{width: width / 4, height: 76, top: -14, justifyContent: 'center', alignItems: 'center', backgroundColor: focused ? theme.colors.primaryContainer : theme.colors.inverseOnSurface, borderRadius: 26}}>
                         <MaterialCommunityIcons name="cog" color={focused ? theme.colors.primary : theme.colors.onBackground} size={27} />
-                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>Settings</Text>
+                        <Text style={{fontSize: 12, color: focused ? theme.colors.primary : theme.colors.onBackground}}>{i18n.t("g4")}</Text>
                     </View>
                 )
             }} />

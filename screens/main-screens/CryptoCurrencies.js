@@ -3,11 +3,29 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from 'react-native-paper'
 import useCoinFetch from '../../hooks/useCoinFetch'
 import {CryptoCard} from '../../components'
+import { useSelector } from 'react-redux'
+import {I18n} from 'i18n-js'
+
+var content = {
+    en: {
+        g1: 'Search'
+    },
+    fr: {
+        g1: 'Rechercher'
+    }
+}
+
+const i18n = new I18n(content)
+
+i18n.enableFallback = true;
 
 const CryptoCurrencies = ({navigation}) => {
 
     const [searchTerm, setSearchTerm] = useState('')
     const [trueData, setTrueData] = useState(data?.data?.coins)
+    const {lang} = useSelector(state => state.language)
+
+    i18n.locale = lang
 
     const theme = useTheme()
 
@@ -55,17 +73,18 @@ const CryptoCurrencies = ({navigation}) => {
             borderRadius: 20,
             paddingLeft: 10
             }}
-        placeholder="Search"
+        placeholder={i18n.t('g1')}
         placeholderTextColor={theme.colors.secondary}
         onChangeText={term => handleSearch(term)}
         cursorColor={theme.colors.onBackground}
       />
 
       {error ? <Text style={{textAlign: 'center', marginVertical: 40}}>Error: {error}</Text> 
-      :<FlatList 
-            data={trueData ? trueData : data?.data?.coins}
-            renderItem={({item}) => <CryptoCard coin={item} navigation={navigation} />}
-          />}
+      :
+      
+          trueData ? trueData.map((item) => (<CryptoCard coin={item} navigation={navigation} key={`coin-${item.rank}`} />))
+          : data?.data?.coins.map((item) => (<CryptoCard coin={item} navigation={navigation} key={`coin-${item.rank}`} />))
+          }
 
     </View>
     </ScrollView>

@@ -1,6 +1,25 @@
 import { View, Text, TouchableOpacity, SafeAreaView, StatusBar, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { useTheme } from 'react-native-paper'
+import { useSelector } from 'react-redux'
+import {I18n} from 'i18n-js'
+
+var content = {
+    en: {
+        g1: 'Welcome To CryptoVerse',
+        g2: 'All informations you need about cryptocurrencies in one place',
+        g3: 'Get Started'
+    },
+    fr: {
+        g1: 'Bienvenue sur CryptoVerse',
+        g2: 'Toutes les informations dont vous avez besoin sur les crypto-monnaies en un seul endroit',
+        g3: 'Commencer'
+    }
+}
+
+const i18n = new I18n(content)
+
+i18n.enableFallback = true;
 
 
 
@@ -8,6 +27,10 @@ const Welcome = ({ navigation }) => {
   const handleGetStarted = () => {
     navigation.navigate('Main');
   };
+
+  const {lang} = useSelector(state => state.language)
+
+  i18n.locale = lang
 
   const theme = useTheme()
 
@@ -29,12 +52,12 @@ const Welcome = ({ navigation }) => {
       </View>
 
       <View style={styles.contentContainer}>
-        <Text style={styles.title}>Welcome To CryptoVerse</Text>
-        <Text style={styles.subtitle}>All informations you need about cryptocurrencies in one place</Text>
+        <Text style={styles.title}>{i18n.t("g1")}</Text>
+        <Text style={styles.subtitle}>{i18n.t("g2")}</Text>
       </View>
 
       <TouchableOpacity style={{...styles.button, backgroundColor: '#6651a4'}} onPress={handleGetStarted}>
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText}>{i18n.t("g3")}</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -82,6 +105,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: '#666',
+    marginHorizontal: 5
   },
   button: {
     backgroundColor: '#1e90ff',

@@ -5,13 +5,13 @@ import { RAPID_API_KEY } from "../KEYS"
 
 
 
-const useNewsFetch = (count) => {
+const useNewsFetch = (count, query) => {
     const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
 
 
-    const url = `https://bing-news-search1.p.rapidapi.com/news/search?q=crypto%20Currencies&count=${count}&freshness=Day&textFormat=Raw&safeSearch=Off`
+    const url = `https://bing-news-search1.p.rapidapi.com/news/search?q=${query}&count=${count}&freshness=Day&textFormat=Raw&safeSearch=Off`
     const options = {
 	method: 'GET',
 	headers: {

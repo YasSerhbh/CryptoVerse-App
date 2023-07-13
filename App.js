@@ -3,6 +3,7 @@ import store from './redux/store';
 import Application from './Application';
 import registerNNPushToken from 'native-notify';
 import { NATIVE_APP_ID, NATIVE_APP_TOKEN } from './KEYS';
+import 'react-native-url-polyfill/auto';
 
 
 

@@ -1,11 +1,34 @@
 import { View, Text, Image, TouchableWithoutFeedback } from 'react-native'
 import { useTheme } from 'react-native-paper'
 import millify from 'millify'
+import { useSelector } from 'react-redux'
+import {I18n} from 'i18n-js'
+
+var content = {
+    en: {
+        g1: 'Price',
+        g2: 'Market Cap',
+        g3: 'Daily Change'
+    },
+    fr:{
+        g1: 'Prix',
+        g2: 'Capitalisation boursière',
+        g3: 'Changement quotidien'
+    }
+}
+
+const i18n = new I18n(content)
+
+i18n.enableFallback = true;
 
 
 const CryptoCard = ({coin, navigation}) => {
 
     const theme = useTheme()
+    const {lang} = useSelector(s => s.language)
+    i18n.locale = lang
+
+
 
   return (
     <TouchableWithoutFeedback  onPress={() => navigation.navigate('Details', {id: coin.uuid})} >
@@ -46,19 +69,19 @@ const CryptoCard = ({coin, navigation}) => {
                 marginHorizontal: 25,
                 color: theme.colors.secondary,
                 marginVertical: 7
-            }}>Price: {millify(coin.price)}$</Text>
+            }}>{i18n.t("g1")}: {millify(coin.price)}$</Text>
             <Text style={{
                 fontSize: 13,
                 marginHorizontal: 25,
                 color: theme.colors.secondary,
                 marginVertical: 7
-            }}>MarketCap: {millify(coin.marketCap)}$</Text>
+            }}>{i18n.t("g2")}: {millify(coin.marketCap)}$</Text>
             <Text style={{
                 fontSize: 13,
                 marginHorizontal: 25,
                 color: theme.colors.secondary,
                 marginVertical: 7
-            }}>Daily Change: {coin.change}%</Text>
+            }}>{i18n.t("g3")}: {coin.change}%</Text>
 
         </View>
     </View>
