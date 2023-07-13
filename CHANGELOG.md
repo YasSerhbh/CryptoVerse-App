@@ -1,5 +1,17 @@
 
 
+## [1.2.0](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.1.0...1.2.0) (2023-07-13)
+
+
+### Features
+
+* added franch language ([da0e744](https://github.com/YasSerhbh/CryptoVerse-App/commit/da0e7446455a346a61dc58a181d782ee4d3b8db1))
+
+
+### Bug Fixes
+
+* fixed some bugs ([f13e92b](https://github.com/YasSerhbh/CryptoVerse-App/commit/f13e92b830be7da8f5c639df75fcea7f212e554b))
+
 ## [1.1.0](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.0.0...1.1.0) (2023-06-05)
 
 
