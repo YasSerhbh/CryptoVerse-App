@@ -33,17 +33,17 @@ const NewsCard = ({item}) => {
 
   return (
      <View style={{...styles.container, backgroundColor: theme.colors.background}}>
-    <Image source={{ uri: item?.image?.thumbnail?.contentUrl || demoImg }} style={styles.image} />
+    <Image source={{ demoImg }} style={styles.image} />
       <View style={styles.content}>
-        <Text style={{...styles.title, color: theme.colors.onBackground}}>{item.name}</Text>
+        <Text style={{...styles.title, color: theme.colors.onBackground}}>{item.title}</Text>
         <Text style={{...styles.description, color: theme.colors.secondary}}>{item.description.substr(0, 150)}...
             <TouchableOpacity onPress={() => Linking.openURL(item.url)}><Text style={{...styles.description,marginBottom: 0, fontWeight: '500', color: theme.colors.primary}}>{i18n.t('g1')}</Text></TouchableOpacity>
         </Text>
         <View style={styles.providerContainer}>
-          <Image source={{ uri: item?.provider[0]?.image?.thumbnail?.contentUrl || demoImg }} style={styles.providerIcon} />
-          <Text style={{...styles.providerName, color: theme.colors.secondary}}>{item?.provider[0]?.name}</Text>
+          <Image source={{ demoImg }} style={styles.providerIcon} />
+          <Text style={{...styles.providerName, color: theme.colors.secondary}}>Coin Desk</Text>
       </View>
-        <Text style={{fontSize: 12, color: theme.colors.secondary}}>{moment(item?.datePublished).startOf("ss").fromNow()}</Text>
+        <Text style={{fontSize: 12, color: theme.colors.secondary}}>{moment(item?.date).startOf("ss").fromNow()}</Text>
         </View>
     </View>
   );

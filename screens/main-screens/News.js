@@ -39,14 +39,18 @@ if (isLoading) return <ActivityIndicator size='large' color={theme.colors.primar
     <ScrollView style={{flex: 1}}refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }>
-      {error ? <Text style={{textAlign: 'center', marginVertical: 40}}>Error: {error}</Text>
-       : 
+      { // error ? <Text style={{textAlign: 'center', marginVertical: 40}}>Error: {error}</Text> :
+       
+
+
     //    <FlatList 
     //         data={data?.value}
     //         renderItem={({item}) => <NewsCard item={item} />}
     //     />
+
+
         
-        data?.value.map((item) => (<NewsCard item={item} key={`news-${Math.floor(Math.random() * 1000000000)}`} />))
+        Array.isArray(data) &&  data?.map((item) => (<NewsCard item={item} key={`news-${Math.floor(Math.random() * 1000000000)}`} />))
         }
     </ScrollView>
     </SafeAreaView>

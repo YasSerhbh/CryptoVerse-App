@@ -11,12 +11,12 @@ var content = {
     en: {
         g: 'Latest Crypto News',
         g2: 'Show More',
-        g3: 'See More Details on ChikhLoupi'
+        g3: 'See More Details on the website'
     },
     fr: {
         g: 'Dernières nouvelles sur les crypto',
         g2: 'Voir Plus',
-        g3: 'Voir plus de détails sur ChikhLoupi'
+        g3: 'Voir plus de détails sur le site web'
     }
 }
 
@@ -39,6 +39,8 @@ const TopNews = ({navigation}) => {
 
     if (isLoading) return <ActivityIndicator size='large' color={theme.colors.primary} style={{marginVertical: 50}} />
 
+    // console.log(data)
+
   return (
     <View style={{marginVertical: 20}}>
       <Text style={{
@@ -55,7 +57,7 @@ const TopNews = ({navigation}) => {
         /> */}
 
         {
-            data?.value.map((item) => (<NewsCard item={item} key={`news-${Math.floor(Math.random() * 1000000000)}`} />))
+            Array.isArray(data) && data?.map((item) => (<NewsCard item={item} key={`news-${Math.floor(Math.random() * 1000000000)}`} />))
         }
 
         <TouchableOpacity onPress={() => navigation.navigate('News')} style={{
@@ -68,7 +70,7 @@ const TopNews = ({navigation}) => {
         }}>{i18n.t("g2")}</Text></TouchableOpacity>
 
 
-        <TouchableOpacity onPress={() => Linking.openURL(`https://chikhloupi.lol/`)} style={{
+        <TouchableOpacity onPress={() => Linking.openURL(`https://yasserbm.tech/`)} style={{
             marginHorizontal: '10%',
             marginVertical: 16
         }}><Text style={{
