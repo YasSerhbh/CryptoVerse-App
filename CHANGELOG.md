@@ -1,5 +1,12 @@
 
 
+## [1.3.1](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.3.0...1.3.1) (2024-01-28)
+
+
+### Bug Fixes
+
+* replaced damaged news api ([0119d6e](https://github.com/YasSerhbh/CryptoVerse-App/commit/0119d6e6ef78c30411d4eb8936e2a3f2adcc5d1d))
+
 ## [1.3.0](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.1.0...1.3.0) (2023-07-13)
 
 
