@@ -10,6 +10,9 @@ var content = {
     en: {
         g1: 'Search'
     },
+    es: {
+        g1: 'Buscar'
+    },
     fr: {
         g1: 'Rechercher'
     }

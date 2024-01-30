@@ -13,6 +13,11 @@ var content = {
         g2: 'Show More',
         g3: 'See More Details on the website'
     },
+    es: {
+        g: 'Últimas noticias sobre criptomonedas',
+        g2: 'mostrar más',
+        g3: 'Ver más detalles en el sitio web'
+    },
     fr: {
         g: 'Dernières nouvelles sur les crypto',
         g2: 'Voir Plus',

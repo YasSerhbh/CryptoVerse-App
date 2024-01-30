@@ -10,6 +10,11 @@ var content = {
         g2: 'Market Cap',
         g3: 'Daily Change'
     },
+    es: {
+        g1: 'Precio',
+        g2: 'Capitalización de mercado',
+        g3: 'Cambio diario'
+    },
     fr:{
         g1: 'Prix',
         g2: 'Capitalisation boursière',

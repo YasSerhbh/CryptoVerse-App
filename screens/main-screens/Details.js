@@ -13,7 +13,7 @@ import { I18n } from 'i18n-js'
 var content = {
     en: {
         g1_1: 'An overview showing the statistics of ',
-        g1_2: ' , such as the base and quote currency, the rank, and trading volume.',
+        g1_2: ', such as the base and quote currency, the rank, and trading volume.',
         g2: 'Price To USD',
         g3: 'Rank',
         g4: '24h Volume',
@@ -26,12 +26,26 @@ var content = {
         g10: 'Total Supply',
         g11: 'Circulating Supply',
         g12: 'What is ',
-
-
+    },
+    es: {
+         g1_1: 'Una descripción general que muestra las estadísticas de ',
+         g1_2: ', como la moneda base y cotizada, la clasificación y el volumen de operaciones.',
+         g2: 'Precio a USD',
+         g3: 'Rango',
+         g4: 'Volumen 24h',
+         g5: 'Captación de mercado',
+         g6: 'Máximo histórico',
+         g07: 'Otra información estadística',
+         g7: 'Número de mercados',
+         g8: 'Número de intercambios',
+         g9: 'Suministro aprobado',
+         g10: 'Oferta Total',
+         g11: 'Suministro circulante',
+         g12: '¿Qué es ',
     },
     fr: {
         g1_1: 'Un aperçu montrant les statistiques de ',
-        g1_2: ' , tels que la devise de base et de cotation, le classement et le volume des transactions.',
+        g1_2: ', tels que la devise de base et de cotation, le classement et le volume des transactions.',
         g2: 'Prix en USD',
         g3: 'Classement',
         g4: 'Volume 24h',

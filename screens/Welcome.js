@@ -10,6 +10,11 @@ var content = {
         g2: 'All informations you need about cryptocurrencies in one place',
         g3: 'Get Started'
     },
+    es: {
+        g1: 'Bienvenido a CryptoVerse',
+        g2: 'Toda la información que necesitas sobre criptomonedas en un solo lugar',
+        g3: 'Empezar'
+    },
     fr: {
         g1: 'Bienvenue sur CryptoVerse',
         g2: 'Toutes les informations dont vous avez besoin sur les crypto-monnaies en un seul endroit',
@@ -105,7 +110,8 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: '#666',
-    marginHorizontal: 5
+    marginHorizontal: 5,
+    textAlign: 'center'
   },
   button: {
     backgroundColor: '#1e90ff',

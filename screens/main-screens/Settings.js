@@ -12,6 +12,10 @@ var content = {
         g1: "Dark Mode",
         g2: "Language"
     },
+    es: {
+        g1: "Modo oscuro",
+        g2: "Idioma"
+    },
     fr: {
         g1: 'Mode Sombre',
         g2: 'Langue'
@@ -68,7 +72,7 @@ const Settings = () => {
           onValueChange={handleLanguageChange}
         >
           <Picker.Item label="English" value="en" />
-          {/* <Picker.Item label="Espanol" value="es" /> */}
+          <Picker.Item label="Español" value="es" />
           <Picker.Item label="Français" value="fr" />
         </Picker>
       </View>

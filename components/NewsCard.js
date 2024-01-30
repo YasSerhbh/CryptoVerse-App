@@ -11,6 +11,9 @@ var content = {
     en: {
         g1: 'Read More'
     },
+    es: {
+        g1: 'Leer más'
+    },
     fr: {
         g1: 'Voir Plus'
     }

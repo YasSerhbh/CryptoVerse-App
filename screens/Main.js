@@ -19,6 +19,12 @@ var content = {
         g3: 'News',
         g4: 'Settings'
     },
+    es: {
+        g1: 'Inicio',
+        g2: 'Criptos',
+        g3: 'Noticias',
+        g4: 'Ajustes'
+    },
     fr: {
         g1: 'Acceuil',
         g2: 'Cryptos',

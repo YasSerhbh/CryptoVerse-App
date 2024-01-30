@@ -15,6 +15,14 @@ var content = {
         g4: "Total Markets:",
         g5: "Total 24h Volume:",
     },
+    es: {
+         gl: 'Estadísticas criptográficas globales',
+         g1: 'Total de criptomonedas:',
+         g2: "Capacidad de mercado total:",
+         g3: "Intercambios totales:",
+         g4: "Mercados totales:",
+         g5: "Volumen total 24h:",
+    },
     fr: {
         gl: 'Statistiques sur les crypto-monnaies',
         g1: 'Total des crypto-devises:',

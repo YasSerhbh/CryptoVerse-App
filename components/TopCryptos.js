@@ -11,6 +11,10 @@ var content = {
         g: 'Top 5 Cryptos',
         g2: 'Show More'
     },
+    es: {
+        g: 'Las 5 mejores criptomonedas',
+        g2: 'Mostrar más'
+    },
     fr: {
         g: 'Top 5 des cryptos',
         g2: 'Voir plus'
