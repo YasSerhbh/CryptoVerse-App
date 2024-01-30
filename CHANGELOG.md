@@ -1,5 +1,12 @@
 
 
+## [1.4.0](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.3.1...1.4.0) (2024-01-30)
+
+
+### Features
+
+* added spanish language ([2928672](https://github.com/YasSerhbh/CryptoVerse-App/commit/29286721df6cd61d074ec4b0659e001ef101b5d2))
+
 ## [1.3.1](https://github.com/YasSerhbh/CryptoVerse-App/compare/1.3.0...1.3.1) (2024-01-28)
 
 
